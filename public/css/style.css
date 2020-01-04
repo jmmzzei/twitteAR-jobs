@@ -2,5 +2,155 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #f32344;
+    font-family: 'Source Code Pro', monospace;
 }
+
+body, 
+html{
+    padding: 0 0 10px 0;
+    background: #f1f1f1;
+}
+
+a{
+    color: rgb(57, 148, 118);
+    padding: 3px;
+    margin: 8px;
+}
+
+a:hover{
+    background: rgb(69, 223, 171);
+    color: #f1f1f1;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: auto;
+    column-gap: 40px;
+    row-gap: 40px;
+    padding: 0 30px;
+    color: #333333;
+}
+
+.card{
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 0.6em #9e9e9e;
+    display: flex;
+    flex-direction: column;
+    position: relative;   
+}
+
+
+.card .card-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    word-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 20px;
+   
+}
+
+.card .card-header .name{
+    font-size: 24px;
+}
+
+.card .card-header .time{
+    opacity: 0.6;
+    text-align: right;
+    padding-left: 20px;
+}
+.card .card-body{
+    margin-bottom: 30px;
+}
+
+.card .card-footer{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: -25px;
+    bottom: 30px;
+    border-top: #9e9e9e 1px dotted;
+}
+
+
+.card .card-footer .username{ color: #00000050;}
+.card .card-footer .username:hover{ color: #fff; background: #00000050;}
+
+
+.card:hover{
+    opacity: 0.9;
+    box-shadow: 0 0 0 #111111;
+    transition: all 0.2s linear;
+}
+
+.navbar{
+    background: rgb(69, 223, 171);
+    height: 80px;
+    display: flex;
+    align-items: center;    
+    justify-content: space-around;
+    margin: 20px 20px;
+}
+
+.navbar p{
+    color: #fff;
+    font-size: 40px;
+    width: 75%;
+    text-align: left;
+}
+
+.navbar div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar div svg{
+    width: 30px;
+    margin: 0 20px;
+}
+
+.navbar button {
+    float: right;
+    margin-right: 20px;
+    outline: none;
+    padding: 10px;
+    background: #0e0e25;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar button:hover {
+    background: rgb(253, 231, 211);
+    color: #000;
+    text-decoration-line: underline;
+    transition: all 0.25s linear;
+}
+
+.navbar p:hover{
+    color: rgb(253, 231, 211);
+}
+
+.item{
+    background: #000;
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-column: repeat(6, 1fr);
+    height: 400px;
+}
+
+::selection {
+    background: #ffb7b7; 
+}
+
