@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 const timeago = require('timeago.js');
-const auth = require('../helpers/auth');
+const auth = require('../auth_twitter/auth');
 
 const querys = 'TrabajoAr';
 const count = 50;
@@ -21,17 +21,16 @@ router.get('/', (req, res) => {
     }
 
      request(opt, (err, resp, body)=> {
+        console.log(body);
+         
         const arr = [];
-        var counter= 0;
+        let counter = 0;
         for (let i = 0; i < count; i++) {
             if (!/^RT/.test(body.statuses[i].full_text)) {
                 
                 let links = body.statuses[i].full_text.match(/https:\/\/t.co\/[a-zA-Z0-9]+/gm);
-
                 let mentions = body.statuses[i].full_text.match(/@\w{0,}(?!\s)./g);
-
                 let hashtags = body.statuses[i].full_text.match(/\B(\#[a-zA-Z0-9]+\b)/g)
-
                 let full_text = body.statuses[i].full_text
 
                 links.forEach(e => {
@@ -62,10 +61,6 @@ router.get('/', (req, res) => {
         
         res.render('index', {arr});
     })
-});
-
-router.get('/:cat', (req, res)=> {
-    res.send('sisisisi');
 });
 
 module.exports = router;
