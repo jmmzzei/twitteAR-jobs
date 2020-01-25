@@ -2,9 +2,7 @@ const oAuthBaseString = require('./oAuhtBaseString')
 const oAuthSigningKey =require('./oAuthSigningKey')
 const oAuthSignature = require('./oAuthSignature')
 
-const auth = {}
-
-auth.getAuthorization = (httpMethod, baseUrl, reqParams) => {
+const getAuthorization = reqParams => {
     // Get acces keys
     const consumerKey = process.env.TWITTER_CONSUMER_KEY,
         consumerSecret = process.env.TWITTER_CONSUMER_SECRET,
@@ -16,7 +14,7 @@ auth.getAuthorization = (httpMethod, baseUrl, reqParams) => {
     let nonce = Buffer.from(consumerKey + ':' + timestamp).toString('base64');
     // generate signature from base string & signing key
 
-    let baseString = oAuthBaseString(httpMethod, baseUrl, reqParams, consumerKey, accessToken, timestamp, nonce);
+    let baseString = oAuthBaseString(reqParams, consumerKey, accessToken, timestamp, nonce);
 
     let signingKey = oAuthSigningKey(consumerSecret, accessTokenSecret);
     let signature = oAuthSignature(baseString, signingKey);
@@ -31,4 +29,4 @@ auth.getAuthorization = (httpMethod, baseUrl, reqParams) => {
         'oauth_version="1.0"';
 }
 
-module.exports = auth;
+module.exports = getAuthorization

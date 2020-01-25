@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.set('helpers', path.join(__dirname, '/helpers'));
 app.set('view engine', 'ejs');
 
-app.use('/', require('./routes/routes'))
+app.use('/', require('./routes/main'))
 
 app.listen(app.get('port'), ()=> {
     console.log(`server on port ${app.get('port')}`);

@@ -1,18 +1,7 @@
 const percentEncode = require('./percentEncode')
-const mergeObjs = require('./mergeObjects')
 
-const genSortedParamStr = (params, key, token, timestamp, nonce) => {
-    let paramObj = mergeObjs(
-        {
-            oauth_consumer_key: key,
-            oauth_nonce: nonce,
-            oauth_signature_method: 'HMAC-SHA1',
-            oauth_timestamp: timestamp,
-            oauth_token: token,
-            oauth_version: '1.0'
-        },
-        params
-    );
+const genSortedParamStr = paramObj => {
+
     // Sort alphabetically
     let paramObjKeys = Object.keys(paramObj);
     let len = paramObjKeys.length;
