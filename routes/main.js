@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const request = require('request')
 const getAuthorization = require('../auth_twitter/auth')
-const cardsParser = require('../helpers/cardsParser')
+const cardsGroupCreator = require('../helpers/cardsGroupCreator')
 
 const queries = 'TrabajoAr'
 const QUERIES_AMOUNT = 50
@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
     }
     request(config, (err, resp, body) => {
         console.log(body);
-        let cardsContent = cardsParser()
-        res.render('index', { cardsContent });
+        let cardsGroup = cardsGroupCreator(body, QUERIES_AMOUNT)
+        res.render('index', { cardsGroup })
     })
 });
 

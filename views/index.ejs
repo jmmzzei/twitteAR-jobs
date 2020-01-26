@@ -25,8 +25,8 @@
     </nav>
     <div class="search"></div>
     <div class="wrapper">
-        <% for (var i = 0; i<cardsContent.length; i++) { %>
-            <%- include('./partials/card', {cardsContent})%>
+        <% for (var i = 0; i<cardsGroup.length; i++) { %>
+            <%- include('./partials/card', {cardsGroup, i})%>
         <%}%>
     </div>
 
