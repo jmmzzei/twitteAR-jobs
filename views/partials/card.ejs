@@ -1,0 +1,17 @@
+<div class="card">
+
+    <div class="card-header">
+        <p class="name"><%= cardsContent[0].name%></p>
+        <p class="time"><%= cardsContent[0].timestamp%></p>
+    </div>
+
+    <div class="card-body">
+        <p><%- cardsContent[0].text.full%></p>
+    </div>
+    <div class="card-footer">
+        <a class="username" target="_blank"
+            href="https://twitter.com/<%= cardsContent[0].username%>">@<%= cardsContent[0].username%></a>
+        <a target="_blank" href="https://twitter.com/<%= cardsContent[0].username%>/status/<%= cardsContent[0].id%>">ir
+            al tweet</a>
+    </div>
+</div>

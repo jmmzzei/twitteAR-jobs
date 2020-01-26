@@ -25,26 +25,8 @@
     </nav>
     <div class="search"></div>
     <div class="wrapper">
-
-        <!-- <%include('./partials/home')%> -->
-
         <% for (var i = 0; i<cardsContent.length; i++) { %>
-        <div class="card">
-            
-            <div class="card-header">
-                <p class="name"><%= cardsContent[i].name%></p>
-                <p class="time"><%= cardsContent[i].timestamp%></p>
-            </div>
-            
-            <div class="card-body">
-                <!-- <span style="opacity: 0.5"><%= cardsContent[i].text.mentions%> </span> -->
-                <p><%- cardsContent[i].text.full%></p>
-            </div>
-            <div class="card-footer">
-                <a class="username" target="_blank" href="https://twitter.com/<%= cardsContent[i].username%>">@<%= cardsContent[i].username%></a>
-                <a target="_blank" href="https://twitter.com/<%= cardsContent[i].username%>/status/<%= cardsContent[i].id%>">ir al tweet</a>
-            </div>
-        </div>
+            <%- include('./partials/card', {cardsContent})%>
         <%}%>
     </div>
 

@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
         },
         json: true
     }
-
     request(config, (err, resp, body) => {
         console.log(body);
         let cardsContent = cardsParser()
