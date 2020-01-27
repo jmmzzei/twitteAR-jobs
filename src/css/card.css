@@ -1,0 +1,56 @@
+
+.card{
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 0.6em #9e9e9e;
+    display: flex;
+    flex-direction: column;
+    position: relative;   
+}
+
+
+.card .card-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    word-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 20px;
+   
+}
+
+.card .card-header .name{
+    font-size: 20px;
+}
+
+.card .card-header .time{
+    opacity: 0.6;
+    text-align: right;
+    padding-left: 20px;
+}
+.card .card-body{
+    margin-bottom: 30px;
+}
+
+.card .card-footer{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: -25px;
+    bottom: 30px;
+    border-top: #9e9e9e 1px dotted;
+}
+
+
+.card .card-footer .username{ color: #00000050;}
+.card .card-footer .username:hover{ color: #fff; background: #00000050;}
+
+
+.card:hover{
+    opacity: 0.9;
+    box-shadow: 0 0 0 #111111;
+    transition: all 0.2s linear;
+}
