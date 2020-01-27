@@ -5,7 +5,7 @@ const getAuthorization = require('../auth_twitter/auth')
 const cardsGroupCreator = require('../helpers/cardsGroupCreator')
 
 const queries = 'TrabajoAr'
-const QUERIES_AMOUNT = 50
+let QUERIES_AMOUNT = 50
 
 router.get('/', (req, res) => {
     let authorization = getAuthorization({ 'q': queries, 'count': QUERIES_AMOUNT, 'result_type': 'recent', 'tweet_mode': 'extended' });
@@ -16,11 +16,13 @@ router.get('/', (req, res) => {
         headers: {
             'Authorization': authorization
         },
+        force_login: true,
         json: true
     }
     request(config, (err, resp, body) => {
-        console.log(body);
-        let cardsGroup = cardsGroupCreator(body, QUERIES_AMOUNT)
+        QUERIES_AMOUNT = body.statuses.length
+        let bodyStatuses = body.statuses
+        let cardsGroup = cardsGroupCreator(bodyStatuses, QUERIES_AMOUNT)
         res.render('index', { cardsGroup })
     })
 });
