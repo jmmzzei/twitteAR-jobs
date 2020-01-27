@@ -8,7 +8,6 @@
     position: relative;   
 }
 
-
 .card .card-header{
     display: flex;
     justify-content: space-around;
@@ -16,11 +15,10 @@
     word-wrap: break-word;
     margin-top: 0;
     margin-bottom: 20px;
-   
 }
 
 .card .card-header .name{
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .card .card-header .time{
@@ -30,6 +28,7 @@
 }
 .card .card-body{
     margin-bottom: 30px;
+    font-size: 2rem;
 }
 
 .card .card-footer{

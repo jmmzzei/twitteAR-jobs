@@ -1,0 +1,48 @@
+.navbar{
+    background: rgb(69, 223, 171);
+    height: 80px;
+    display: flex;
+    align-items: center;    
+    justify-content: space-around;
+    margin: 20px 20px;
+}
+
+.navbar p{
+    color: #fff;
+    font-size: 4rem;
+    width: 75%;
+    text-align: left;
+}
+
+.navbar div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar div svg{
+    width: 30px;
+    margin: 0 20px;
+}
+
+.navbar button {
+    float: right;
+    margin-right: 20px;
+    outline: none;
+    padding: 10px;
+    background: #0e0e25;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar button:hover {
+    background: rgb(253, 231, 211);
+    color: #000;
+    text-decoration-line: underline;
+    transition: all 0.25s linear;
+}
+
+.navbar p:hover{
+    color: rgb(253, 231, 211);
+}
