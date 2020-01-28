@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clear && npm run css -w && nodemon -r dotenv/config index",
     "dev": "nodemon -r dotenv/config index",
     "clear" : "rm -r dist && mkdir dist && cd dist && mkdir css && mkdir js",
     "start": "node index",

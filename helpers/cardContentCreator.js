@@ -13,7 +13,7 @@ const cardContentCreator = bodyStatuses => {
         })
     }
 
-    cardBody.full_text = cardBody.full_text.replace(cardBody.mentions, '<h5>' + cardBody.mentions + '</h5>');
+    cardBody.full_text = cardBody.full_text.replace(cardBody.mentions, '<p>' + cardBody.mentions + '</p>');
 
     if (cardBody.hashtags) {
         cardBody.hashtags.forEach(e => {

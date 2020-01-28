@@ -6,6 +6,25 @@
     font-size: 62.5%;
 }
 
+a,
+b,
+p{
+    font-size: 1.4rem;
+}
+
+a{
+    color: rgb(57, 148, 118);
+    padding: 3px;
+    margin: 8px;
+}
+
+a:hover{
+    background: rgb(69, 223, 171);
+    color: #f1f1f1;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
 body,
 html{
     padding: 0 0 10px 0;

@@ -2,21 +2,6 @@
 @import url('./navbar.css');
 @import url('./reset.css');
 
-a{
-    color: rgb(57, 148, 118);
-    padding: 3px;
-    margin: 8px;
-}
-
-
-
-a:hover{
-    background: rgb(69, 223, 171);
-    color: #f1f1f1;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
 .wrapper{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

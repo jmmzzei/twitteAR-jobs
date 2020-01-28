@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 app.set('port', process.env.PORT || 3000);
-app.use(express.static('dist'));
+app.use(express.static('src'));
 app.set('helpers', path.join(__dirname, '/helpers'));
 app.set('view engine', 'ejs');
 

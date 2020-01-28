@@ -1,4 +1,3 @@
-
 .card{
     padding: 25px;
     border-radius: 8px;
@@ -18,7 +17,7 @@
 }
 
 .card .card-header .name{
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
 .card .card-header .time{
@@ -43,10 +42,8 @@
     border-top: #9e9e9e 1px dotted;
 }
 
-
 .card .card-footer .username{ color: #00000050;}
 .card .card-footer .username:hover{ color: #fff; background: #00000050;}
-
 
 .card:hover{
     opacity: 0.9;
