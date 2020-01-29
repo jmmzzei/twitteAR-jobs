@@ -10,10 +10,10 @@ let QUERIES_AMOUNT = 100
 
 router.get('/', (req, res) => {
 
-    let authorization = getAuthorization({ 'q': notWantedKeywords + wantedKeywords, 'count': QUERIES_AMOUNT, 'result_type': 'recent', 'tweet_mode': 'extended' });
+    let { authorization, url } = getAuthorization({ 'q': notWantedKeywords + wantedKeywords, 'count': QUERIES_AMOUNT, 'result_type': 'recent', 'tweet_mode': 'extended' });
 
     let config = {
-        url: `https://api.twitter.com/1.1/search/tweets.json?q=${notWantedKeywords + wantedKeywords}&count=${QUERIES_AMOUNT}&result_type=recent&tweet_mode=extended`,
+        url: url,
         method: 'GET',
         headers: {
             'Authorization': authorization

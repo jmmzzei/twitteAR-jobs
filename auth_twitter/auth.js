@@ -14,19 +14,20 @@ const getAuthorization = reqParams => {
     let nonce = Buffer.from(consumerKey + ':' + timestamp).toString('base64');
     // generate signature from base string & signing key
 
-    let baseString = oAuthBaseString(reqParams, consumerKey, accessToken, timestamp, nonce);
+    let { baseString, url } = oAuthBaseString(reqParams, consumerKey, accessToken, timestamp, nonce);
 
     let signingKey = oAuthSigningKey(consumerSecret, accessTokenSecret);
     let signature = oAuthSignature(baseString, signingKey);
     // return interpolated string
-    return 'OAuth ' +
+    return {authorization: 'OAuth ' +
         'oauth_consumer_key="' + consumerKey + '", ' +
         'oauth_nonce="' + nonce + '", ' +
         'oauth_signature="' + signature + '", ' +
         'oauth_signature_method="HMAC-SHA1", ' +
         'oauth_timestamp="' + timestamp + '", ' +
         'oauth_token="' + accessToken + '", ' +
-        'oauth_version="1.0"';
+        'oauth_version="1.0"', 
+        url: url}
 }
 
 module.exports = getAuthorization

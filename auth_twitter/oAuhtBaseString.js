@@ -14,10 +14,13 @@ const oAuthBaseString = (params, key, token, timestamp, nonce) => {
         },
         params
     )
+    let url= 'https://api.twitter.com/1.1/search/tweets.json'
+    let sortedParams = genSortedParamStr(params)
 
-    return 'GET'
-        + '&' + percentEncode('https://api.twitter.com/1.1/search/tweets.json')
-        + '&' + percentEncode(genSortedParamStr(paramObj));
+    return { baseString:  'GET'
+        + '&' + percentEncode(url)
+        + '&' + percentEncode(genSortedParamStr(paramObj)),
+    url: url + '?' + sortedParams}
 };
 
 module.exports = oAuthBaseString
