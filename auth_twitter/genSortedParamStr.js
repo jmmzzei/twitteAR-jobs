@@ -1,12 +1,10 @@
 const percentEncode = require('./percentEncode')
 
-const genSortedParamStr = paramObj => {
+module.exports = genSortedParamStr = paramObj => {
     let paramStr = ''
     for (const key in paramObj) {
         if (key !== 'count')
             paramStr += '&' + key + '=' + percentEncode(decodeURIComponent(paramObj[key]))
     }
     return `count=100${paramStr}`
-};
-
-module.exports = genSortedParamStr
+}
