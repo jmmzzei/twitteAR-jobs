@@ -1,4 +1,4 @@
-const oAuthBaseString = require('./oAuhtBaseString')
+const oAuthBaseString = require('./oAuthBaseString')
 const oAuthSignature = require('./oAuthSignature')
 
 module.exports = reqParams => {
