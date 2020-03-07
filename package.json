@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clear && npm run css -w && nodemon -r dotenv/config index",
+    "build": "npm run clear && npm run css -w && npm run js:minify -w && nodemon -r dotenv/config index -w",
     "dev": "nodemon -r dotenv/config index",
-    "clear" : "rm -r dist && mkdir dist && cd dist && mkdir css && mkdir js",
+    "clear": "rimraf ./dist/css/* && rimraf ./dist/js/*",
     "start": "node index",
     "js:minify": "cd ./src/js/ && terser main.js --output ./../../dist/js/main.js",
     "css": "cd ./src/css/ && postcss *.css --use autoprefixer -d ./../../dist/css/ && npm run css:minify",
@@ -24,9 +24,7 @@
     "normalize.css": "^8.0.1",
     "postcss-discard-comments": "^4.0.2",
     "request": "^2.88.0",
-    "timeago.js": "^4.0.0-beta.2",
-    "xhr2": "^0.2.0",
-    "xmlhttprequest": "^1.8.0"
+    "timeago.js": "^4.0.0-beta.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -34,6 +32,7 @@
     "dotenv": "^8.2.0",
     "nodemon": "^1.19.3",
     "postcss": "^7.0.26",
-    "postcss-cli": "^7.1.0"
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2"
   }
 }
