@@ -1,17 +1,24 @@
 <div class="card">
+  <div class="card-header">
+    <p class="name"><%= cardsGroup[i].name%></p>
+    <p class="time"><%= cardsGroup[i].timestamp%></p>
+  </div>
 
-    <div class="card-header">
-        <p class="name"><%= cardsGroup[i].name%></p>
-        <p class="time"><%= cardsGroup[i].timestamp%></p>
-    </div>
-
-    <div class="card-body">
-        <p><%- cardsGroup[i].text.full%></p>
-    </div>
-    <div class="card-footer">
-        <a class="link" target="_blank"
-            href="https://twitter.com/<%= cardsGroup[i].username%>">@<%= cardsGroup[i].username%></a>
-        <a class="link" target="_blank" href="https://twitter.com/<%= cardsGroup[i].username%>/status/<%= cardsGroup[i].id%>">ir
-            al tweet</a>
-    </div>
+  <div class="card-body">
+    <p><%- cardsGroup[i].text.full%></p>
+  </div>
+  <div class="card-footer">
+    <a
+      class="link"
+      target="_blank"
+      href="https://twitter.com/<%= cardsGroup[i].username%>"
+      >@<%= cardsGroup[i].username%></a
+    >
+    <a
+      class="link"
+      target="_blank"
+      href="https://twitter.com/<%= cardsGroup[i].username%>/status/<%= cardsGroup[i].id%>"
+      >ir al tweet</a
+    >
+  </div>
 </div>
