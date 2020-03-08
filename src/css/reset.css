@@ -19,15 +19,24 @@ p{
     font-size: 1.4rem;
 }
 
+input,
+label,
+span,
+button{
+    font-size: 1.4rem;
+    outline: none;
+    border: none;    
+}
+
 a{
     color: var(--primary);
 }
 
 a:hover{
     background: var(--primary);
-    color: var(--light);
-    border-radius: 5px;
-    padding: 8px;
+    padding: 3px;
+    border-radius: 3px;
+    color: var(--dark);
     text-decoration: none;
 }
 
@@ -40,5 +49,6 @@ html{
 }
 
 ::selection {
-    background: #ffb7b7; 
+    background: white;
+    color: var(--dark);
 }
