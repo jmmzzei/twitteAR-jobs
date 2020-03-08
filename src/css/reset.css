@@ -1,9 +1,16 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
+}
+
+:root{
+    --primary: #66FCF1;
+    --secondary: #C5C6C7;
+    --accent: #45A29E;
+    --dark: #1F2833;
+    --light: #f1f1f1;
+    --black: rgb(27, 31, 46);
 }
 
 a,
@@ -13,22 +20,23 @@ p{
 }
 
 a{
-    color: rgb(57, 148, 118);
-    padding: 3px;
-    margin: 8px;
+    color: var(--primary);
 }
 
 a:hover{
-    background: rgb(69, 223, 171);
-    color: #f1f1f1;
+    background: var(--primary);
+    color: var(--light);
     border-radius: 5px;
+    padding: 8px;
     text-decoration: none;
 }
 
 body,
 html{
-    padding: 0 0 10px 0;
-    background: #f1f1f1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background: var(--dark);
 }
 
 ::selection {

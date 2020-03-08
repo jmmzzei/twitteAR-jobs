@@ -2,24 +2,26 @@
 @import url('./navbar.css');
 @import url('./reset.css');
 
-.wrapper{
+.main{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-template-rows: auto;
+    grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
     column-gap: 40px;
     row-gap: 40px;
     padding: 0 30px;
-    color: #333333;
+    grid-template-areas:
+    "search wrapper blank";
 }
 
-.item{
-    background: #000;
-    color: white;
+.search{
+    grid-area: search;
 }
 
-.container {
-    display: grid;
-    grid-column: repeat(6, 1fr);
-    height: 400px;
+.wrapper{
+    border: 1px solid var(--black);
+    grid-area: wrapper;
+    border-radius: 10px;
 }
 
+/* .blank{
+    grid-area: blank;
+} */
