@@ -1,6 +1,8 @@
 @import url('./card.css');
 @import url('./navbar.css');
 @import url('./reset.css');
+@import url('./search.css');
+
 
 .main{
     display: grid;
@@ -12,16 +14,10 @@
     "search wrapper blank";
 }
 
-.search{
-    grid-area: search;
-}
 
 .wrapper{
     border: 1px solid var(--black);
     grid-area: wrapper;
+    box-shadow:  0 0 0.5rem #00000020;
     border-radius: 10px;
 }
-
-/* .blank{
-    grid-area: blank;
-} */
