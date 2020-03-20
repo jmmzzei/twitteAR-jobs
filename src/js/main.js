@@ -15,7 +15,14 @@ SearchSpan.prototype.create = function() {
   this.btn.innerHTML = 'x'
   this.btn.setAttribute('id', ++dynamicIDHashtags)
   this.btn.className = 'span-btn'
-  this.span.className = this.input.id === 'keywords' ? 'keyw-span' : 'hash-span'
+
+  if (this.input.id === 'keywords') {
+    this.span.className = 'keyw-span'
+  } else if(this.input.id === 'hashtags'){
+    this.span.className = 'hash-span'
+  } else {
+    this.span.className = 'unwanted-span'
+  }
 
   this.btn.addEventListener('click', e => {
     e.preventDefault()
@@ -34,11 +41,16 @@ SearchSpan.prototype.create = function() {
 
   if (this.input.id === 'keywords') {
     this.span.innerText = this.input.value
-  } else {
+  } else if (this.input.id === 'hashtags'){
     this.span.innerText =
       this.input.value[0] === '#'
         ? '' + this.input.value
         : '#' + this.input.value
+  } else {
+    this.span.innerText =
+    this.input.value[0] === '-'
+      ? '' + this.input.value
+      : '-' + this.input.value
   }
 
   this.span.appendChild(this.btn)
@@ -87,11 +99,15 @@ keywordsInput.listen()
 let hashtagsInput = new Input('hashtags')
 hashtagsInput.listen()
 
+let unwantedInput = new Input('unwanted')
+unwantedInput.listen()
+
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', e => {
   e.preventDefault()
   let hashtags = [],
-    keywords = []
+    keywords = [],
+    unwanted = []
 
   let hashSpans = document.getElementsByClassName('hash-span')
   Array.from(hashSpans).forEach(el => {
@@ -101,6 +117,11 @@ submitBtn.addEventListener('click', e => {
   let keyWSpans = document.getElementsByClassName('keyw-span')
   Array.from(keyWSpans).forEach(el => {
     keywords.push(percentEncode(el.innerText.slice(0, -2)))
+  })
+
+  let unwantedSpans = document.getElementsByClassName('unwanted-span')
+  Array.from(unwantedSpans).forEach(el => {
+    unwanted.push(percentEncode(el.innerText.slice(1, -2)))
   })
 
   let url = new URL('https://5191d8f9.ngrok.io/'),
@@ -113,6 +134,10 @@ submitBtn.addEventListener('click', e => {
         Array.isArray(keywords) && keywords.length
           ? keywords.join(' ') + ' ' + keywordsInput.getValue().trim() || ''
           : keywordsInput.getValue() || '',
+      unwanted:
+      Array.isArray(unwanted) && unwanted.length
+        ? unwanted.join(' ') + ' ' + unwantedInput.getValue().trim() || ''
+        : unwantedInput.getValue() || '',
     }
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
   window.location.href = url.href
