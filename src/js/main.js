@@ -1,4 +1,5 @@
 let dynamicIDHashtags = 0
+let data = ''
 
 function Label(id) {
   return document.getElementById(id)
@@ -14,9 +15,7 @@ SearchSpan.prototype.create = function() {
   this.btn.innerHTML = 'x'
   this.btn.setAttribute('id', ++dynamicIDHashtags)
   this.btn.className = 'span-btn'
-  this.span.className = this.input.id === 'keywords' 
-                            ? 'keyw-span'
-                            : 'hash-span'
+  this.span.className = this.input.id === 'keywords' ? 'keyw-span' : 'hash-span'
 
   this.btn.addEventListener('click', e => {
     e.preventDefault()
@@ -33,13 +32,13 @@ SearchSpan.prototype.create = function() {
     })
   })
 
-  if(this.input.id === 'keywords' ){
+  if (this.input.id === 'keywords') {
     this.span.innerText = this.input.value
   } else {
     this.span.innerText =
-    this.input.value[0] === '#'
-      ? '' + this.input.value
-      : '#' + this.input.value
+      this.input.value[0] === '#'
+        ? '' + this.input.value
+        : '#' + this.input.value
   }
 
   this.span.appendChild(this.btn)
@@ -49,12 +48,16 @@ SearchSpan.prototype.renderIn = function(label) {
   label.appendChild(this.span)
 }
 
-function Input(id){
+function Input(id) {
   this.input = document.getElementById(id)
   this.id = id
 }
 
-Input.prototype.clear = function(){
+Input.prototype.getValue = function() {
+  return this.input.value
+}
+
+Input.prototype.clear = function() {
   this.input.value = ''
 }
 
@@ -66,7 +69,7 @@ Input.prototype.hasSpaces = function() {
   }
 }
 
-Input.prototype.listen = function(){
+Input.prototype.listen = function() {
   this.input.addEventListener('keypress', e => {
     if (this.hasSpaces()) {
       let searchSpan = new SearchSpan(this.input)
@@ -84,7 +87,6 @@ keywordsInput.listen()
 let hashtagsInput = new Input('hashtags')
 hashtagsInput.listen()
 
-
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', e => {
   e.preventDefault()
@@ -101,23 +103,19 @@ submitBtn.addEventListener('click', e => {
     keywords.push(percentEncode(el.innerText.slice(0, -2)))
   })
 
-  let country = document.getElementById('country')
-  let countryValue = percentEncode(country.value)
-
-  var url = new URL('http://localhost:3000/search/'),
+  let url = new URL('https://5191d8f9.ngrok.io/'),
     params = {
-      country: countryValue,
       hashtags:
         Array.isArray(hashtags) && hashtags.length
-          ? hashtags
-          : hashtagsInput.value,
+          ? hashtags.join(' ') + ' ' + hashtagsInput.getValue().trim() || ''
+          : hashtagsInput.getValue() || '',
       keywords:
         Array.isArray(keywords) && keywords.length
-          ? keywords
-          : keywordsInput.value,
+          ? keywords.join(' ') + ' ' + keywordsInput.getValue().trim() || ''
+          : keywordsInput.getValue() || '',
     }
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-  fetch(url)
+  window.location.href = url.href
 })
 
 const percentEncode = str =>
@@ -125,17 +123,3 @@ const percentEncode = str =>
     /[!*()']/g,
     char => '%' + char.charCodeAt(0).toString(16),
   )
-
-// const theme = document.getElementById("theme");
-// theme.addEventListener("click", () => {
-//     theme.innerHTML = theme.innerHTML == "Light" ? "Dark" : "Light";
-//     if (theme.innerHTML == "Light") {
-//         document.body.style.background = "#0e0e25";
-//         document.body.style.color = "#fff";
-//         document.body.style.transition = "all 0.4s linear"
-//     } else {
-//         document.body.style.background = "#f1f1f1";
-//         document.body.style.color = "#333";
-//         document.body.style.transition = "all 0.4s linear"
-//     }
-// });

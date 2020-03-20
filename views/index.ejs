@@ -20,16 +20,8 @@
     </nav>
     <main class="main">
       <div class="search">
-        <form action="/search" method="GET" id="form">
-          <label for="country" id="country-label"
-            >Country:
-            <input
-              type="text"
-              id="country"
-              placeholder="Argentina"
-              value="Argentina"
-            />
-          </label>
+        <form action="/search-get" method="GET" id="form">
+
           <label for="hashtags" id="hashtags-label"
             >Hashtags:
             <input
@@ -48,16 +40,15 @@
               value="Javascript"
             />
           </label>
+
           <button class="button" id="submit">APPLY</button>
         </form>
       </div>
-
       <div class="wrapper">
         <% for (var i = 0; i<cardsGroup.length; i++) { %>
             <%- include('./partials/card', {cardsGroup, i})%>
-        <%}%>   
+        <%}%>
         </div>
-
 
       <div class="blank"></div>
     </main>
