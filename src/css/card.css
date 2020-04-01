@@ -1,83 +1,82 @@
-.card{
-    color: var(--primary);
-    padding: 10px 25px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    position: relative;   
-    margin-bottom: 30px;
-    cursor: default;
+.card {
+  color: var(--primary);
+  padding: 10px 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30px;
+  cursor: default;
 }
-.card::after{
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    transform: translateX(50%);
-    width: 50%;
-    margin: 0 auto;
-    height: 2px;
-    content: '';
-    background: var(--black);
-}
-
-.card .card-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    word-wrap: break-word;
-    margin-top: 0;
-    padding: 0;
+.card::after {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  transform: translateX(50%);
+  width: 50%;
+  margin: 0 auto;
+  height: 2px;
+  content: '';
+  background: var(--black);
 }
 
-.card .card-header .name{
-    font-size: 2.4rem;
+.card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+  margin-top: 0;
+  padding: 0;
 }
 
-.card .card-header .time{
-    opacity: 0.6;
-    color: var(--light);
-    text-align: right;
-    padding-left: 20px;
-}
-.card .card-body{
-    color: var(--light);
-    margin-bottom: 20px;
-    font-size: 2rem;
-    line-height: 1.6;
-
+.card .card-header .name {
+  font-size: 2.4rem;
 }
 
-.card .card-footer{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    margin: -25px;
-    bottom: 30px;
+.card .card-header .time {
+  opacity: 0.6;
+  color: var(--light);
+  text-align: right;
+  padding-left: 20px;
+}
+.card .card-body {
+  color: var(--light);
+  margin-bottom: 20px;
+  font-size: 2rem;
+  line-height: 1.6;
 }
 
-.card .card-footer .link{ 
-    color: var(--primary);
-    padding: 8px;
+.card .card-footer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: -25px;
+  bottom: 30px;
 }
 
-.card .card-footer .link:hover{
-    color: #fff; 
-    background: #00000050;
+.card .card-footer .link {
+  color: var(--primary);
+  padding: 8px;
 }
 
-.card:hover{
-    opacity: 0.9;
-    box-shadow: 0 0 0 #111111;
-    color: var(--light);
-    box-shadow: 0 5px 0.4em #00000050;
-    /* transform: translateY(-5px); */
-    transition: all 0.2s linear;
+.card .card-footer .link:hover {
+  color: #fff;
+  background: #00000050;
 }
 
-.card:hover:after{
-    background: white;
-    transition: all 0.2s linear;
+.card:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 0 #111111;
+  color: var(--light);
+  box-shadow: 0 5px 0.4em #00000050;
+  /* transform: translateY(-5px); */
+  transition: all 0.2s linear;
+}
+
+.card:hover:after {
+  background: white;
+  transition: all 0.2s linear;
 }

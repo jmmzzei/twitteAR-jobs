@@ -1,54 +1,54 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 62.5%;
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
 }
 
-:root{
-    --primary: #66FCF1;
-    --secondary: #C5C6C7;
-    --accent: #45A29E;
-    --dark: #1F2833;
-    --light: #f1f1f1;
-    --black: rgb(27, 31, 46);
+:root {
+  --primary: #66fcf1;
+  --secondary: #c5c6c7;
+  --accent: #45a29e;
+  --dark: #1f2833;
+  --light: #f1f1f1;
+  --black: rgb(27, 31, 46);
 }
 
 a,
 b,
-p{
-    font-size: 1.4rem;
+p {
+  font-size: 1.4rem;
 }
 
 input,
 label,
 span,
-button{
-    font-size: 1.4rem;
-    outline: none;
-    border: none;    
+button {
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
 }
 
-a{
-    color: var(--primary);
+a {
+  color: var(--primary);
 }
 
-a:hover{
-    background: var(--primary);
-    padding: 3px;
-    border-radius: 3px;
-    color: var(--dark);
-    text-decoration: none;
+a:hover {
+  background: var(--primary);
+  padding: 3px;
+  border-radius: 3px;
+  color: var(--dark);
+  text-decoration: none;
 }
 
 body,
-html{
-    position: relative;
-    padding: 0;
-    margin: 0;
-    background: var(--dark);
+html {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: var(--dark);
 }
 
 ::selection {
-    background: white;
-    color: var(--dark);
+  background: white;
+  color: var(--dark);
 }

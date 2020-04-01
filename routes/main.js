@@ -20,14 +20,14 @@ router.get('/', (req, res) => {
   unwantedWord = req.query.unwanted + '%20'
   wantedKeywords = req.query.keywords
   hashtags = req.query.hashtags
-  
+
   let { authorization, url } = getAuthorization({
     q: unwantedWord + wantedKeywords + hashtags,
     count: QUERIES_AMOUNT,
     result_type: 'recent',
     tweet_mode: 'extended',
   })
-  
+
   let config = {
     url,
     method: 'GET',
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
     force_login: true,
     json: true,
   }
-  
+
   console.log(url)
   request(config, (err, resp, body) => {
     if (err) res.send('Something bad happened: ' + err)
@@ -51,5 +51,3 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
-
-
