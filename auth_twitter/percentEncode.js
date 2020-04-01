@@ -1,3 +1,5 @@
-module.exports = percentEncode = str =>
-    encodeURIComponent(str).replace(/[!*()']/g, char => 
-        '%' + char.charCodeAt(0).toString(16))
+module.exports = percentEncode = (str) =>
+  encodeURIComponent(str).replace(
+    /[!*()']/g,
+    (char) => '%' + char.charCodeAt(0).toString(16),
+  )
