@@ -5,11 +5,13 @@
 
 .main {
   display: grid;
-  grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
+  grid-template-columns: 0.8fr minmax(320px, 1fr) 0.6fr;
   column-gap: 40px;
   row-gap: 40px;
   padding: 0 30px;
-  grid-template-areas: 'search wrapper blank';
+  grid-template-areas: 
+  "navbar navbar navbar"
+  "search wrapper blank";
 }
 
 .wrapper {
@@ -17,4 +19,37 @@
   grid-area: wrapper;
   box-shadow: 0 0 0.5rem #00000020;
   border-radius: 10px;
+}
+
+.message-wrapper{
+  margin: 0;
+  background: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.message{
+  margin: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.4rem;
+  color: var(--dark);
+  text-align: center;
+  opacity: 0;
+  animation: show 0.4s ease forwards;
+}
+
+.submessage{
+  margin: 15px;
+  font-size: 1.5rem;
+  color: var(--dark);
+  text-align: center;
+  opacity: 0;
+  animation: show 0.4s ease forwards;
+}
+
+@keyframes show{
+  to{
+    opacity: 1;
+  }
 }
