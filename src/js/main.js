@@ -1,6 +1,5 @@
 let dynamicIDHashtags = 0
 let data = ''
-console.log(1)
 
 function Label(id) {
   return document.getElementById(id)
@@ -11,7 +10,6 @@ function SearchSpan(input) {
   this.btn = document.createElement('button')
   this.input = input
 }
-console.log(2)
 
 SearchSpan.prototype.create = function () {
   this.btn.innerHTML = 'x'
@@ -54,7 +52,6 @@ SearchSpan.prototype.create = function () {
         ? '' + this.input.value
         : '-' + this.input.value
   }
-  console.log(3)
 
   this.span.appendChild(this.btn)
 }
@@ -108,7 +105,7 @@ unwantedInput.listen()
 const submitBtn = document.getElementById('submitBtn')
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault()
-
+  
   let hashtags = [],
     keywords = [],
     unwanted = []
@@ -127,6 +124,14 @@ submitBtn.addEventListener('click', (e) => {
   Array.from(unwantedSpans).forEach((el) => {
     unwanted.push(percentEncode(el.innerText.slice(1, -2)))
   })
+
+  if(hashtagsInput.getValue() 
+    || unwantedInput.getValue() 
+    || keywordsInput.getValue()
+    || (unwantedSpans.length > 0)
+    || (keyWSpans.length > 0)
+    || (hashSpans.length > 0)
+    ){
 
   let url = new URL('https://twittear-jobs.herokuapp.com/search/'),
     params = {
@@ -147,6 +152,23 @@ submitBtn.addEventListener('click', (e) => {
     url.searchParams.append(key, params[key]),
   )
   window.location.href = url.href
+  } else {
+    if(!(document.getElementsByClassName('message').length > 0)){
+      const wrapper = document.getElementsByClassName('wrapper')[0]
+      const messageWrapper = document.createElement('div')
+      const message = document.createElement('p')
+      messageWrapper.className = 'message-wrapper'
+      message.innerText = 'NOTHING TO SEARCH' 
+      message.className = "message"
+      const submessage = document.createElement('p')
+      submessage.innerText = 'Please, fill at least one input.'
+      submessage.className = "submessage"
+      messageWrapper.appendChild(message)
+      messageWrapper.appendChild(submessage)
+      wrapper.appendChild(messageWrapper)
+    }
+    
+  }
 })
 
 const percentEncode = (str) =>
