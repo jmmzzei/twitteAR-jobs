@@ -3,19 +3,27 @@
 @import url('./reset.css');
 @import url('./search.css');
 
-.main{
-    display: grid;
-    grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
-    column-gap: 40px;
-    row-gap: 40px;
-    padding: 0 30px;
-    grid-template-areas:
-    "search wrapper blank";
+.main {
+  display: grid;
+  grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
+  column-gap: 40px;
+  row-gap: 40px;
+  padding: 0 30px;
+  grid-template-areas: 'search wrapper blank';
 }
 
-.wrapper{
-    border: 1px solid var(--black);
-    grid-area: wrapper;
-    box-shadow:  0 0 0.5rem #00000020;
-    border-radius: 10px;
+.wrapper {
+  border: 1px solid var(--black);
+  grid-area: wrapper;
+  box-shadow: 0 0 0.5rem #00000020;
+  border-radius: 10px;
+}
+
+.home {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  text-align: left;
+  font-size: 4rem;
+  color: #151a1f;
+  margin: 20px;
 }

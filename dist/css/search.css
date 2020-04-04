@@ -1,0 +1,69 @@
+.search {
+  grid-area: search;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  max-width: 300px;
+  font-family: Inter, sans-serif;
+}
+input,
+label {
+  display: block;
+  color: var(--light);
+  background: var(--dark);
+}
+input {
+  margin: 15px 0 40px;
+  padding: 10px;
+  box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.31);
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+input:hover {
+  background: var(--primary);
+  color: var(--dark);
+  border: 1px solid var(--dark);
+  transition: all 0.3s ease-in;
+}
+.hash-span,
+.keyw-span,
+.unwanted-span {
+  width: auto;
+  border-radius: 15px;
+  margin: 5px;
+  background: var(--light);
+  color: var(--dark);
+  padding: 5px 3px 5px 5px;
+  white-space: nowrap;
+}
+.span-btn {
+  height: 24px;
+  width: 24px;
+  margin-left: 8px;
+  margin-right: 0;
+  border-radius: 50%;
+  color: var(--dark);
+  display: inline-block;
+  margin-bottom: 10px;
+  background: transparent;
+}
+.button,
+.span-btn:hover {
+  background: var(--light);
+}
+.button {
+  font-family: Inter, sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--dark);
+  cursor: pointer;
+  float: right;
+}
+button:hover {
+  background: var(--primary);
+  color: var(--dark);
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jc3Mvc2VhcmNoLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxRQUNFLGdCQUFpQixDQUNqQixZQUFhLENBQ2IsV0FBWSxDQUNaLHNCQUF1QixDQUN2QixrQkFDRixDQUVBLE1BRUUsZUFBZ0IsQ0FHaEIsNEJBQ0YsQ0FFQSxZQVBFLGFBQWMsQ0FFZCxrQkFBbUIsQ0FDbkIsc0JBYUYsQ0FUQSxNQUNFLGtCQUFxQixDQUNyQixZQUFhLENBQ2IsbUNBQStCLENBQy9CLGtCQUFtQixDQUNuQixxQkFJRixDQUVBLFlBQ0UseUJBQTBCLENBQzFCLGlCQUFrQixDQUNsQiw0QkFBNkIsQ0FDN0IsMEJBQ0YsQ0FFQSxxQ0FHRSxVQUFXLENBQ1gsa0JBQW1CLENBQ25CLFVBQVcsQ0FFWCx1QkFBd0IsQ0FDeEIsaUJBQWtCLENBQ2xCLHVCQUFrQixDQUNsQixrQkFDRixDQUVBLFVBQ0UsV0FBWSxDQUNaLFVBQVcsQ0FDWCxlQUFnQixDQUNoQixjQUFlLENBQ2YsaUJBQWtCLENBQ2xCLGlCQUFrQixDQUNsQixvQkFBcUIsQ0FDckIsa0JBQW1CLENBQ25CLHNCQUNGLENBTUEsd0JBSEUsdUJBV0YsQ0FSQSxRQUNFLDRCQUFnQyxDQUNoQyxZQUFhLENBQ2Isa0JBQW1CLENBRW5CLGlCQUFrQixDQUNsQixjQUFlLENBQ2YsV0FDRixDQUVBLGFBQ0UseUJBQTBCLENBQzFCLGlCQUNGIiwiZmlsZSI6InNlYXJjaC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2VhcmNoIHtcbiAgZ3JpZC1hcmVhOiBzZWFyY2g7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGhlaWdodDogNzB2aDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbmxhYmVsIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1heC13aWR0aDogMzAwcHg7XG4gIGNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJhY2tncm91bmQ6IHZhcigtLWRhcmspO1xuICBmb250LWZhbWlseTogJ0ludGVyJywgc2Fucy1zZXJpZjtcbn1cblxuaW5wdXQge1xuICBtYXJnaW46IDE1cHggMCA0MHB4IDA7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJveC1zaGFkb3c6IDAgMCAwLjRlbSAjMDAwMDAwNTA7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHdoaXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYmFja2dyb3VuZDogdmFyKC0tZGFyayk7XG59XG5cbmlucHV0OmhvdmVyIHtcbiAgYmFja2dyb3VuZDogdmFyKC0tcHJpbWFyeSk7XG4gIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tZGFyayk7XG4gIHRyYW5zaXRpb246IGFsbCAwLjNzIGVhc2UtaW47XG59XG5cbi5rZXl3LXNwYW4sXG4uaGFzaC1zcGFuLFxuLnVud2FudGVkLXNwYW4ge1xuICB3aWR0aDogYXV0bztcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgbWFyZ2luOiA1cHg7XG4gIHBhZGRpbmc6IDVweDtcbiAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICBjb2xvcjogdmFyKC0tZGFyayk7XG4gIHBhZGRpbmctcmlnaHQ6IDNweDtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbn1cblxuLnNwYW4tYnRuIHtcbiAgaGVpZ2h0OiAyNHB4O1xuICB3aWR0aDogMjRweDtcbiAgbWFyZ2luLWxlZnQ6IDhweDtcbiAgbWFyZ2luLXJpZ2h0OiAwO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbn1cblxuLnNwYW4tYnRuOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xufVxuXG4uYnV0dG9uIHtcbiAgZm9udC1mYW1pbHk6ICdJbnRlcicsIHNhbnMtc2VyaWY7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgY29sb3I6IHZhcigtLWRhcmspO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGZsb2F0OiByaWdodDtcbn1cblxuYnV0dG9uOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogdmFyKC0tcHJpbWFyeSk7XG4gIGNvbG9yOiB2YXIoLS1kYXJrKTtcbn1cbiJdfQ== */
