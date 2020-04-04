@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clear && npm run css -w && npm run js:minify -w && nodemon -r dotenv/config index -w",
-    "dev": "nodemon -r dotenv/config index",
+    "dev": "npm run clear && npm run css -w && npm run js:minify -w && nodemon -r dotenv/config index",
+    "build": "npm run clear && npm run css && npm run js:minify",
     "clear": "rimraf ./dist/css/* && rimraf ./dist/js/*",
     "start": "node index",
     "js:minify": "cd ./src/js/ && terser main.js --output ./../../dist/js/main.js",
@@ -17,23 +17,25 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.7.1",
+    "autoprefixer": "^9.7.5",
+    "cssnano": "^4.1.10",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "jssha": "^2.3.1",
+    "jssha": "^2.4.1",
+    "kind-of": "^6.0.3",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
     "postcss-discard-comments": "^4.0.2",
-    "request": "^2.88.0",
-    "timeago.js": "^4.0.0-beta.2"
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "terser": "^4.6.10",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
-    "nodemon": "^1.19.3",
-    "postcss": "^7.0.26",
-    "postcss-cli": "^7.1.0",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.2"
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1"
   }
 }
