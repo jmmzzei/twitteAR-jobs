@@ -17,6 +17,7 @@
   grid-area: wrapper;
   box-shadow: 0 0 0.5rem #00000020;
   border-radius: 10px;
+<<<<<<< HEAD
 }
 
 .home {
@@ -26,4 +27,6 @@
   font-size: 4rem;
   color: #151a1f;
   margin: 20px;
+=======
+>>>>>>> 2abeb931cec8649a8a88a4d4cdd0aea7fd1736c7
 }

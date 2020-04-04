@@ -128,7 +128,7 @@ submitBtn.addEventListener('click', (e) => {
     unwanted.push(percentEncode(el.innerText.slice(1, -2)))
   })
 
-  let url = new URL('http://localhost:3000/search/'),
+  let url = new URL('https://twittear-jobs.herokuapp.com/search/'),
     params = {
       hashtags:
         Array.isArray(hashtags) && hashtags.length
