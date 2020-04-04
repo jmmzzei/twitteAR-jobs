@@ -15,12 +15,10 @@
   <body>
     <nav class="navbar">
       <p>TWITEAR JOBS</p>
-
-      <!-- <button id="theme">0</button> -->
     </nav>
     <main class="main">
       <div class="search">
-        <form action="/search-get" method="GET" id="form">
+        <form action="/search/" method="GET" id="form">
 
           <label for="hashtags" id="hashtags-label"
             >Hashtags:
@@ -28,7 +26,6 @@
               type="text"
               id="hashtags"
               placeholder="#"
-              value="#TrabajoAr"
             />
           </label>
           <label for="keywords" id="keywords-label"
@@ -37,7 +34,6 @@
               type="text"
               id="keywords"
               placeholder="Javascript"
-              value="Javascript"
             />
           </label>
           <label for="unwanted" id="unwanted-label"
@@ -46,18 +42,19 @@
             type="text"
             id="unwanted"
             placeholder="-Estoy"
-            value="-Estoy"
           />
         </label>
+        <button class="button" id="submitBtn" >APPLY</button>
 
-          <button class="button" id="submit">APPLY</button>
-        </form>
+      </form>
       </div>
       <div class="wrapper">
-        <% for (var i = 0; i<cardsGroup.length; i++) { %>
+        <% if(typeof cardsGroup != 'string') { %>
+            <% for (var i = 0; i<cardsGroup.length; i++) { %>
             <%- include('./partials/card', {cardsGroup, i})%>
+          <%}%>
         <%}%>
-        </div>
+      </div>
 
       <div class="blank"></div>
     </main>
