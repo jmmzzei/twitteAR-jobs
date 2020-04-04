@@ -11,7 +11,8 @@
     "start": "node index",
     "js:minify": "cd ./src/js/ && terser main.js --output ./../../dist/js/main.js",
     "css": "cd ./src/css/ && postcss *.css --use autoprefixer -d ./../../dist/css/ && npm run css:minify",
-    "css:minify": "cd ./dist/css/ && postcss *.css -r --verbose"
+    "css:minify": "cd ./dist/css/ && postcss *.css -r --verbose",
+    "heroku-postbuild": "echo The build has been made previously"
   },
   "keywords": [],
   "author": "",
