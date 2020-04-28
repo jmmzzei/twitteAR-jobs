@@ -1,6 +1,6 @@
+@import url('./reset.css');
 @import url('./card.css');
 @import url('./navbar.css');
-@import url('./reset.css');
 @import url('./search.css');
 
 .main {
@@ -32,7 +32,7 @@
 .message{
   margin: 15px;
   font-family: 'Inter', sans-serif;
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   color: var(--dark);
   text-align: center;
   opacity: 0;
@@ -52,4 +52,21 @@
   to{
     opacity: 1;
   }
+}
+
+  
+@media (min-width: 32em and max-width: 74em){
+  .main{
+    background: white;
+    grid-template-areas: 
+    "navbar"
+    "wrapper";
+  }
+} 
+  
+@media (min-width: 82em){
+  .main{
+    background: green;
+  }
+
 }

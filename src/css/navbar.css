@@ -19,6 +19,7 @@
 }
 
 .navbar button {
+  font-weight: bolder;
   font-size: 2rem;
   margin-right: 20px;
   outline: none;

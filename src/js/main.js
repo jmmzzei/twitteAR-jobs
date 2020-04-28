@@ -105,7 +105,7 @@ unwantedInput.listen()
 const submitBtn = document.getElementById('submitBtn')
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault()
-  
+
   let hashtags = [],
     keywords = [],
     unwanted = []
@@ -125,40 +125,40 @@ submitBtn.addEventListener('click', (e) => {
     unwanted.push(percentEncode(el.innerText.slice(1, -2)))
   })
 
-  if(hashtagsInput.getValue() 
-    || unwantedInput.getValue() 
+  if (hashtagsInput.getValue()
+    || unwantedInput.getValue()
     || keywordsInput.getValue()
     || (unwantedSpans.length > 0)
     || (keyWSpans.length > 0)
     || (hashSpans.length > 0)
-    ){
+  ) {
 
-  let url = new URL('https://twittear-jobs.herokuapp.com/search/'),
-    params = {
-      hashtags:
-        Array.isArray(hashtags) && hashtags.length
-          ? hashtags.join(' ') + ' ' + hashtagsInput.getValue().trim() || ''
-          : hashtagsInput.getValue() || '',
-      keywords:
-        Array.isArray(keywords) && keywords.length
-          ? keywords.join(' ') + ' ' + keywordsInput.getValue().trim() || ''
-          : keywordsInput.getValue() || '',
-      unwanted:
-        Array.isArray(unwanted) && unwanted.length
-          ? unwanted.join(' ') + ' ' + unwantedInput.getValue().trim() || ''
-          : unwantedInput.getValue() || '',
-    }
-  Object.keys(params).forEach((key) =>
-    url.searchParams.append(key, params[key]),
-  )
-  window.location.href = url.href
+    let url = new URL('https://twittear-jobs.herokuapp.com/search/'),
+      params = {
+        hashtags:
+          Array.isArray(hashtags) && hashtags.length
+            ? hashtags.join(' ') + ' ' + hashtagsInput.getValue().trim() || ''
+            : hashtagsInput.getValue() || '',
+        keywords:
+          Array.isArray(keywords) && keywords.length
+            ? keywords.join(' ') + ' ' + keywordsInput.getValue().trim() || ''
+            : keywordsInput.getValue() || '',
+        unwanted:
+          Array.isArray(unwanted) && unwanted.length
+            ? unwanted.join(' ') + ' ' + unwantedInput.getValue().trim() || ''
+            : unwantedInput.getValue() || '',
+      }
+    Object.keys(params).forEach((key) =>
+      url.searchParams.append(key, params[key]),
+    )
+    window.location.href = url.href
   } else {
-    if(!(document.getElementsByClassName('message').length > 0)){
+    if (!(document.getElementsByClassName('message').length > 0)) {
       const wrapper = document.getElementsByClassName('wrapper')[0]
       const messageWrapper = document.createElement('div')
       const message = document.createElement('p')
       messageWrapper.className = 'message-wrapper'
-      message.innerText = 'NOTHING TO SEARCH' 
+      message.innerText = 'NOTHING TO SEARCH'
       message.className = "message"
       const submessage = document.createElement('p')
       submessage.innerText = 'Please, fill at least one input.'
@@ -167,7 +167,7 @@ submitBtn.addEventListener('click', (e) => {
       messageWrapper.appendChild(submessage)
       wrapper.appendChild(messageWrapper)
     }
-    
+
   }
 })
 
@@ -176,3 +176,14 @@ const percentEncode = (str) =>
     /[!*()']/g,
     (char) => '%' + char.charCodeAt(0).toString(16),
   )
+
+const btnToggle = document.getElementById('btn-toggle')
+btnToggle.addEventListener('click', () => {
+  toggleMenu()
+})
+
+function toggleMenu() {
+  const search = document.getElementsByClassName('search')[0]
+  search.setAttribute('style', `display: ${search.style.display === 'flex' ? 'none' : 'flex'}`)
+
+}
