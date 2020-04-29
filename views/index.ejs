@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://fonts.googleapis.com/css?family=Inter:700|Roboto:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
-
-  <title>Document</title>
+  <link rel="icon" href="/favicon.ico" />
+  <title>Twittear Jobs</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <button id="btn-toggle">|||</button>
   </nav>
   <main class="main">
-    <div class="search" id="show" style="display:flex">
+    <aside class="search" id="show" style="display:flex">
       <form action="/search/" method="GET" id="form">
 
         <label for="hashtags" id="hashtags-label">Hashtags:
@@ -32,16 +32,17 @@
         <button class="button" id="submitBtn">APPLY</button>
 
       </form>
-    </div>
-    <div class="wrapper">
+    </aside>
+
+    <section class="wrapper">
       <% if(typeof cardsGroup != 'string') { %>
       <% for (var i = 0; i<cardsGroup.length; i++) { %>
       <%- include('./partials/card', {cardsGroup, i})%>
       <%}%>
         <%}%>
-    </div>
+    </section>
 
-    <div class="blank"></div>
+    <section class="blank"></section>
   </main>
 
   <script src="/js/Label.js"></script>

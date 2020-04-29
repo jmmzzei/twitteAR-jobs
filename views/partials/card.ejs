@@ -1,13 +1,13 @@
-<div class="card">
-  <div class="card-header">
+<article class="card">
+  <header class="card-header">
     <p class="name"><%= cardsGroup[i].name%></p>
     <p class="time"><%= cardsGroup[i].timestamp%></p>
-  </div>
+  </header>
 
-  <div class="card-body">
+  <main class="card-body">
     <p><%- cardsGroup[i].text.full%></p>
-  </div>
-  <div class="card-footer">
+  </main>
+  <footer class="card-footer">
     <a
       class="link"
       target="_blank"
@@ -20,5 +20,5 @@
       href="https://twitter.com/<%= cardsGroup[i].username%>/status/<%= cardsGroup[i].id%>"
       >ir al tweet</a
     >
-  </div>
-</div>
+  </footer>
+</article>
