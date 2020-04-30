@@ -8,6 +8,7 @@
   margin-bottom: 30px;
   cursor: default;
 }
+
 .card::after {
   position: absolute;
   bottom: -30px;
@@ -27,6 +28,7 @@
   word-wrap: break-word;
   margin-top: 0;
   padding: 0;
+  word-break: break-word;
 }
 
 .card .card-header .name {
@@ -72,7 +74,7 @@
   box-shadow: 0 0 0 #111111;
   color: var(--light);
   box-shadow: 0 5px 0.4em #00000050;
-  /* transform: translateY(-5px); */
+  transform: translateY(-1px); 
   transition: all 0.2s linear;
 }
 

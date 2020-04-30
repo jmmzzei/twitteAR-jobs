@@ -1,5 +1,5 @@
 .navbar {
-  height: 80px;
+  height: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -9,25 +9,23 @@
   z-index: 1;
 }
 
-.navbar p {
+.navbar h1 {
   font-family: 'Inter', sans-serif;
   color: var(--primary);
-  background: var(--dark);
-  font-size: 3.4rem;
   width: 75%;
   cursor: default;
+  font-size: 2.8rem;
 }
 
 .navbar button {
   font-weight: bolder;
   font-size: 2rem;
-  margin-right: 20px;
+  padding: 0.8rem;
+  background: var(--black);
+  color: var(--light);
   outline: none;
-  padding: 10px;
-  background: var(--light);
   border: none;
-  color: var(--black);
-  border-radius: 5px;
+  border-radius: .5rem;
   cursor: pointer;
 }
 
@@ -35,4 +33,16 @@
   background: rgb(253, 231, 211);
   color: #000;
   transition: all 0.25s linear;
+}
+
+@media (min-width: 36em){
+  .navbar h1{
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 48em){
+  .navbar button{
+    display: none;    
+  }
 }

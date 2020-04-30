@@ -1,9 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 62.5%;
-}
-
 :root {
   --primary: #66fcf1;
   --secondary: #c5c6c7;
@@ -13,17 +7,41 @@
   --black: rgb(27, 31, 46);
 }
 
-/*a,*/
-/*b,*/
-/*p {*/
-  /*font-size: 1.4rem;*/
-/*}*/
+
+*, *:after, *:before{
+  box-sizing: border-box;
+}
+
+::selection {
+  background: white;
+  color: var(--dark);
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem; 
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: var(--dark);
+}
+
+a,p,div{
+  font-size: 1.6rem;
+}
+
+h1{
+  font-size: 3.2rem;
+}
 
 input,
 label,
 span,
 button {
-  font-size: 1.4rem;
   outline: none;
   border: none;
 }
@@ -40,15 +58,3 @@ a:hover {
   text-decoration: none;
 }
 
-body,
-html {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  background: var(--dark);
-}
-
-::selection {
-  background: white;
-  color: var(--dark);
-}

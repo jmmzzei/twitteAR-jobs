@@ -1,21 +1,24 @@
 .search {
   grid-area: search;
   display: flex;
-  height: 70vh;
   justify-content: center;
+  align-items: start;
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
-  max-width: 300px;
-  margin: 20px 0 0 0;
+  margin: 2rem auto;
+  min-width: 32rem;
   color: var(--light);
   background: var(--dark);
   font-family: 'Inter', sans-serif;
 }
 
 input {
-  margin: 15px 0 15px 0;
+  text-align: center; 
+  margin: 1.5rem 0;
+  width: 100%;
   padding: 10px;
   box-shadow: 0 0 0.4em #00000050;
   border-radius: 10px;
@@ -37,8 +40,8 @@ input:hover {
 .unwanted-span {
   width: auto;
   border-radius: 15px;
-  margin: 5px;
-  padding: 5px 10px;
+  margin: .5rem;
+  padding: .5rem 1rem;
   background: var(--light);
   color: var(--dark);
   padding-right: 3px;
@@ -46,8 +49,8 @@ input:hover {
 }
 
 .span-btn {
-  height: 24px;
-  width: 24px;
+  height: 2.4rem;
+  width: 2.4rem;
   margin-left: 8px;
   margin-right: 0;
   border-radius: 50%;
@@ -68,10 +71,21 @@ input:hover {
   background: var(--light);
   color: var(--dark);
   cursor: pointer;
-  float: right;
 }
 
 button:hover {
   background: var(--primary);
   color: var(--dark);
+}
+
+@media (min-width: 36em) {
+  .search {
+    display: flex;
+  }
+}
+
+@media (min-width: 48rem) {
+  label{
+    min-width: 22rem;
+  }
 }
