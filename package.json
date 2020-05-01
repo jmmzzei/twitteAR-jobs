@@ -9,8 +9,8 @@
     "build": "npm run clear && npm run css && npm run js:minify",
     "clear": "rimraf ./dist/css/* && rimraf ./dist/js/*",
     "start": "node index",
-    "js:minify": "cd ./src/js/ && terser main.js --output ./../../dist/js/main.js",
-    "css": "cd ./src/css/ && postcss *.css --use autoprefixer -d ./../../dist/css/ && npm run css:minify",
+    "js:minify": "cd ./src/jslib/ && terser main.js --output ./../../dist/js/main.js",
+    "css": "cd ./src/css/ && postcss *.css --use autoprefixer -d ./../../dist/css/ ",
     "css:minify": "cd ./dist/css/ && postcss *.css -r --verbose",
     "heroku-postbuild": "echo The build has been made previously"
   },
