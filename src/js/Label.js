@@ -1,4 +1,4 @@
-function Label(id) {
+export function Label(id) {
   return document.getElementById(id)
 }
 

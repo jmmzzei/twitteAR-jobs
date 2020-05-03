@@ -34,21 +34,8 @@
       </form>
     </aside>
 
-    <section class="wrapper">
-      <% if(typeof cardsGroup != 'string') { %>
-      <% for (var i = 0; i<cardsGroup.length; i++) { %>
-      <%- include('./partials/card', {cardsGroup, i})%>
-      <%}%>
-        <%}%>
-    </section>
-
   </main>
-  <script src="/js/Label.js"></script>
-  <script src="/js/SearchSpan.js"></script>
-  <script src="/js/Input.js"></script>
-  <script src="/js/helpers/percentEncode.js"></script>
-  <script src="/js/helpers/submitHandler.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="./bundle.js"></script>
 </body>
 
 </html>

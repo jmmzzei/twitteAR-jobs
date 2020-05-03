@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run clear && npm run css -w && npm run js:minify -w && nodemon -r dotenv/config index",
+    "dev:nowebpack": "npm run clear && npm run css -w && npm run js:minify -w && nodemon -r dotenv/config index",
+    "dev": "npm run clear && nodemon -r dotenv/config index",
     "build": "npm run clear && npm run css && npm run js:minify",
     "clear": "rimraf ./dist/css/* && rimraf ./dist/js/*",
     "start": "node index",

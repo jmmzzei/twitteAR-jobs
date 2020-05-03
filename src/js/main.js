@@ -1,4 +1,7 @@
-let dynamicIDHashtags = 0
+import "../css/style.css"
+import { Input } from './Input'
+import { submitHandler } from './helpers/submitHandler'
+
 let data = ''
 
 let keywordsInput = new Input('keywords')
@@ -10,10 +13,11 @@ hashtagsInput.listen()
 let unwantedInput = new Input('unwanted')
 unwantedInput.listen()
 
+
 const submitBtn = document.getElementById('submitBtn')
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    submitHandler()
+    submitHandler(hashtagsInput, unwantedInput, keywordsInput)
 })
 
 const btnToggle = document.getElementById('btn-toggle')

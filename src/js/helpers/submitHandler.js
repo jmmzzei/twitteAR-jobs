@@ -1,4 +1,6 @@
-const submitHandler = () => {
+import { percentEncode } from './percentEncode'
+
+export const submitHandler = (hashtagsInput, keywordsInput, unwantedInput) => {
 
     let hashtags = Array.from(
         document.getElementsByClassName('hash-span'),
