@@ -1,8 +1,6 @@
 import "../css/style.css"
-import { Input } from './Input'
-import { submitHandler } from './helpers/submitHandler'
-
-let data = ''
+import { Input } from './classes/Input'
+import { submitHandler } from './submitHandler'
 
 let keywordsInput = new Input('keywords')
 keywordsInput.listen()
@@ -12,7 +10,6 @@ hashtagsInput.listen()
 
 let unwantedInput = new Input('unwanted')
 unwantedInput.listen()
-
 
 const submitBtn = document.getElementById('submitBtn')
 submitBtn.addEventListener('click', (e) => {
@@ -28,5 +25,4 @@ btnToggle.addEventListener('click', () => {
 function toggleMenu() {
     const search = document.getElementsByClassName('search')[0]
     search.setAttribute('style', `display: ${search.style.display === 'flex' ? 'none' : 'flex'}`)
-
 }

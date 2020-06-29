@@ -1,5 +1,6 @@
 import { Label } from './Label'
 import { SearchSpan } from './SearchSpan'
+
 export function Input(id) {
     this.input = document.getElementById(id)
     this.id = id
