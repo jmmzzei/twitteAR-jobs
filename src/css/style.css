@@ -64,13 +64,15 @@
 
 @media (min-width: 48em) {
  .main {
-    grid-template-columns:minmax(26rem, 0.2fr) minmax(3rem, 140rem);
+    grid-template-columns:minmax(26rem, 0.2fr) minmax(140rem);
     grid-template-areas:
-      'navbar navbar '
-      'search wrapper ';
+      'navbar navbar'
+      'search wrapper';
+  }
+  .wrapper {
+    margin-left: 2rem;  
   }
 }
-
 
 @media (min-width: 62em) {
  .main {

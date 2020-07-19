@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:700|Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href="https://fonts.googleapis.com/css?family=Inter:700|Roboto:400,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta name="keywords" content="twitter jobs empleo trabajo IT" />
+    <meta
+      name="description"
+      content="Web app for searching jobs posted in Twitter, in a distraction-free enviorenment."
+    />
 
-  <meta name="keywords" content="twitter jobs empleo trabajo IT">
-  <meta name="description" content="Web app for searching jobs posted in Twitter, in a distraction-free enviorenment.">
+    <meta name="author" content="José María Mazzei" />
+    <meta name="theme-color" content="#1f2833" />
+    <meta name="msapplication-navbutton-color" content="#1f2833" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1f2833" />
 
-  <meta name="author" content="José María Mazzei" />
-  <meta name="theme-color" content="#1f2833">
-  <meta name="msapplication-navbutton-color" content="#1f2833">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2833">
+    <link rel="icon" href="/favicon.ico" />
+    <title>Twittear Jobs</title>
+  </head>
 
-  <link rel="icon" href="/favicon.ico" />
-  <title>Twittear Jobs</title>
-</head>
+  <body>
+    <nav class="navbar">
+      <h1>TWITTEAR JOBS</h1>
+      <button id="btn-toggle">|||</button>
+    </nav>
+    <main class="main">
+      <aside class="search" id="show">
+        <form action="/search/" method="GET" id="form">
+          <label for="hashtags" id="hashtags-label"
+            >Hashtags:
+            <input type="text" id="hashtags" placeholder="#" />
+          </label>
+          <label for="keywords" id="keywords-label"
+            >Keywords:
+            <input type="text" id="keywords" placeholder="Javascript" />
+          </label>
+          <label for="unwanted" id="unwanted-label"
+            >Unwanted Words:
+            <input type="text" id="unwanted" placeholder="-Estoy" />
+          </label>
+          <button class="button" id="submitBtn">SEARCH</button>
+        </form>
+        <section class="wrapper"></section>
+      </aside>
+    </main>
 
-<body>
-  <nav class="navbar">
-    <h1>TWITTEAR JOBS</h1>
-    <button id="btn-toggle">|||</button>
-  </nav>
-  <main class="main">
-    <aside class="search" id="show">
-      <form action="/search/" method="GET" id="form">
-
-        <label for="hashtags" id="hashtags-label">Hashtags:
-          <input type="text" id="hashtags" placeholder="#" />
-        </label>
-        <label for="keywords" id="keywords-label">Keywords:
-          <input type="text" id="keywords" placeholder="Javascript" />
-        </label>
-        <label for="unwanted" id="unwanted-label">Unwanted Words:
-          <input type="text" id="unwanted" placeholder="-Estoy" />
-        </label>
-        <button class="button" id="submitBtn">SEARCH</button>
-
-      </form>
-    </aside>
-
-  </main>
-  <script src="./bundle.js"></script>
-</body>
-
+    <script src="./bundle.js"></script>
+  </body>
 </html>
