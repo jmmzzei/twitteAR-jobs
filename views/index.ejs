@@ -10,57 +10,48 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
 
-    <title>Document</title>
+    <meta name="keywords" content="twitter jobs empleo trabajo IT" />
+    <meta
+      name="description"
+      content="Web app for searching jobs posted in Twitter, in a distraction-free enviorenment."
+    />
+
+    <meta name="author" content="José María Mazzei" />
+    <meta name="theme-color" content="#1f2833" />
+    <meta name="msapplication-navbutton-color" content="#1f2833" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1f2833" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <title>Twittear Jobs</title>
   </head>
+
   <body>
     <nav class="navbar">
-      <p>TWITEAR JOBS</p>
-
-      <!-- <button id="theme">0</button> -->
+      <h1>TWITTEAR JOBS</h1>
+      <button id="btn-toggle">|||</button>
     </nav>
     <main class="main">
-      <div class="search">
-        <form action="/search-get" method="GET" id="form">
-
+      <aside class="search" id="show">
+        <form action="/search/" method="GET" id="form">
           <label for="hashtags" id="hashtags-label"
             >Hashtags:
-            <input
-              type="text"
-              id="hashtags"
-              placeholder="#"
-              value="#TrabajoAr"
-            />
+            <input type="text" id="hashtags" placeholder="#" />
           </label>
           <label for="keywords" id="keywords-label"
             >Keywords:
-            <input
-              type="text"
-              id="keywords"
-              placeholder="Javascript"
-              value="Javascript"
-            />
+            <input type="text" id="keywords" placeholder="Javascript" />
           </label>
           <label for="unwanted" id="unwanted-label"
-          >Unwanted Words:
-          <input
-            type="text"
-            id="unwanted"
-            placeholder="-Estoy"
-            value="-Estoy"
-          />
-        </label>
-
-          <button class="button" id="submit">APPLY</button>
+            >Unwanted Words:
+            <input type="text" id="unwanted" placeholder="-Estoy" />
+          </label>
+          <button class="button" id="submitBtn">SEARCH</button>
         </form>
-      </div>
-      <div class="wrapper">
-        <% for (var i = 0; i<cardsGroup.length; i++) { %>
-            <%- include('./partials/card', {cardsGroup, i})%>
-        <%}%>
-        </div>
-
-      <div class="blank"></div>
+        <section class="wrapper"></section>
+      </aside>
     </main>
-    <script src="/js/main.js"></script>
+
+    <script src="./bundle.js"></script>
   </body>
 </html>

@@ -1,4 +1,6 @@
 node_modules/
 .env
-.swp
+src/dist/
 .dist/
+.vscode/
+.*.sw[op]
