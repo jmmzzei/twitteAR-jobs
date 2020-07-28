@@ -5,12 +5,12 @@ const getAuthorization = require('../auth_twitter/getAuthorization')
 const cardsGroupCreator = require('../helpers/cardsGroupCreator')
 
 let unwantedWord = ''
-let wantedKeywords = 'TrabajoAr%20Buscamos%20'
+let wantedKeywords = ''
 let hashtags = ''
 let QUERIES_AMOUNT = 300
 
 router.use((req, res, next) => {
-  res.append('Access-Control-Allow-Origin', ['*'])
+  res.append('Access-Control-Allow-Origin', ['https://twittear-jobs.herokuapp.com'])
   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.append('Access-Control-Allow-Headers', 'Content-Type')
   next()
@@ -38,7 +38,6 @@ router.get('/', (req, res) => {
     json: true,
   }
   
-  console.log(url)
   request(config, (err, resp, body) => {
     if (err) res.send('Something bad happened: ' + err)
     else {
