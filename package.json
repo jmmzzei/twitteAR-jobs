@@ -27,7 +27,7 @@
     "kind-of": "^6.0.3",
     "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
-    "postcss": "^7.0.35",
+    "postcss": "^8.2.10",
     "postcss-cli": "^7.1.2",
     "postcss-discard-comments": "^4.0.2",
     "request": "^2.88.2",
