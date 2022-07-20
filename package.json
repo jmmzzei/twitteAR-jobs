@@ -32,7 +32,7 @@
     "postcss-discard-comments": "^4.0.2",
     "request": "^2.88.2",
     "rimraf": "^3.0.2",
-    "terser": "^4.6.10",
+    "terser": "^4.8.1",
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
